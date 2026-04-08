@@ -1,0 +1,634 @@
+<?= $this->extend('layouts/master') ?>
+<?= $this->section('content') ?>
+
+<?php
+$googleMapsKey = $googleMapsKey ?? '';
+$desaList = $desaList ?? [
+    ['iddesa' => '1471040001', 'nmdesa' => 'Cinta Raja'],
+    ['iddesa' => '1471060005', 'nmdesa' => 'Kedungsari']
+];
+
+$statusLabels = [
+    1 => '1. Aktif',
+    2 => '2. Tidak Aktif',
+    3 => '3. Bukan Usaha',
+    4 => '4. Tidak Ditemukan'
+];
+?>
+
+<header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+    <div class="container-fluid px-4">
+        <div class="page-header-content">
+            <div class="row align-items-center justify-content-between pt-3">
+                <div class="col-auto mb-3">
+                    <h1 class="page-header-title">
+                        <div class="page-header-icon"><i data-feather="map-pin"></i></div>
+                        Indepth - Door to Door
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid px-4">
+
+    <form method="get" action="<?= base_url('usaha/lab-dropdown') ?>" class="mb-4" id="formFilter">
+        <div class="row g-2 align-items-end">
+            <div class="col-md-5">
+                <label for="desa" class="form-label">Desa</label>
+                <select name="desa" id="desa" class="form-select" required>
+                    <option value="">-- Pilih Desa --</option>
+                    <?php foreach ($desaList as $d): ?>
+                        <option value="<?= esc($d['iddesa']) ?>"
+                            <?= (isset($selectedDesa) && $selectedDesa == $d['iddesa']) ? 'selected' : '' ?>>
+                            <?= esc($d['nmdesa']) ?> (<?= esc($d['iddesa']) ?>)
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="col-auto">
+                <button class="btn btn-primary" type="submit">Tampilkan</button>
+            </div>
+
+            <div class="col-md-12 mt-2">
+                <button type="button" id="btnTambahUsaha" class="btn btn-success"
+                    data-bs-toggle="modal" data-bs-target="#createModal"
+                    style="<?= empty($selectedDesa) ? 'display:none;' : '' ?>">
+                    <i data-feather="plus"></i> Tambah Usaha
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <?php if (!empty($usaha)): ?>
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="labTable" class="table table-sm table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Usaha</th>
+                                <th>Alamat</th>
+                                <th>Desa</th>
+                                <th>Koordinat</th>
+                                <th>Status</th>
+                                <th>Update Terakhir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no = 1; foreach ($usaha as $u):
+                                $placeId = is_array($u) ? ($u['placeId'] ?? '') : ($u->placeId ?? '');
+                                $placeName = is_array($u) ? ($u['placeName'] ?? '') : ($u->placeName ?? '');
+                                $placeAddress = is_array($u) ? ($u['placeAddress'] ?? '') : ($u->placeAddress ?? '');
+                                $nmdesa = is_array($u) ? ($u['nmdesa'] ?? ($u['iddesa'] ?? '')) : ($u->nmdesa ?? $u->iddesa ?? '');
+                                $lat = is_array($u) ? ($u['placeLatitude'] ?? '') : ($u->placeLatitude ?? '');
+                                $lng = is_array($u) ? ($u['placeLongitude'] ?? '') : ($u->placeLongitude ?? '');
+                                $status = is_array($u) ? ($u['status_usaha'] ?? '') : ($u->status_usaha ?? '');
+                                $last = is_array($u) ? ($u['last_update_by'] ?? '') : ($u->last_update_by ?? '');
+                            ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td>
+                                        <?= esc($placeName) ?><br>
+                                        <?php
+                                            $statusAda    = !empty($status);
+                                            $lastBy       = (string)($last ?? '');
+                                            $sessionNama  = (string)(session('nama_user') ?? '');
+                                            $updatedByYou = $statusAda && $sessionNama !== '' && strpos($lastBy, $sessionNama) !== false;
+                                        ?>
+                                        <?php if ($statusAda && $updatedByYou): ?>
+                                            <button
+                                                class="btn btn-sm btn-success btnUpdate mt-2"
+                                                data-placeid="<?= esc($placeId) ?>"
+                                                data-placename="<?= esc($placeName) ?>"
+                                                data-placeaddress="<?= esc($placeAddress) ?>"
+                                                data-status="<?= esc($status) ?>"
+                                                data-kategori="<?= esc(is_array($u) ? ($u['kategori'] ?? '') : ($u->kategori ?? '')) ?>"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#updateModal">
+                                                Update
+                                            </button>
+                                        <?php elseif ($statusAda && !$updatedByYou): ?>
+                                            <div class="mt-2"><span class="text-success fw-bold">Telah Diupdate</span></div>
+                                        <?php endif; ?>
+
+                                        <?php
+                                            $creator = $creators[$placeId] ?? null;
+                                            $currentUserId = session('id_user');
+                                            if ($creator && isset($creator->id_siri_user) && (string)$creator->id_siri_user === (string)$currentUserId):
+                                        ?>
+                                            <form action="<?= base_url('usaha/deleteUsaha') ?>" method="post" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus usaha ini?')">
+                                                <?= csrf_field() ?>
+                                                <input type="hidden" name="placeId" value="<?= esc($placeId) ?>">
+                                                <button type="submit" class="btn btn-danger btn-sm ms-1 mt-2">Hapus</button>
+                                            </form>
+                                        <?php endif; ?>
+                                    </td>
+
+                                    <td><?= esc($placeAddress) ?></td>
+                                    <td><?= esc($nmdesa) ?></td>
+                                    <td>
+                                        <?= esc($lat) ?>, <?= esc($lng) ?>
+                                        <br>
+                                        <?php
+                                            // tombol lihat map (buka new tab)
+                                            $kab = esc($selected_kabupaten ?? '');
+                                            $kec = esc($selected_kecamatan ?? '');
+                                            $des = esc($selected_desa ?? '');
+                                            $mapUrl = base_url("usaha/mapView?placeId=" . urlencode($placeId) . "&kabupaten={$kab}&kecamatan={$kec}&desa={$des}");
+                                        ?>
+                                        <a href="<?= $mapUrl ?>" target="_blank" class="btn btn-sm btn-outline-info mt-1">Lihat Map</a>
+                                    </td>
+
+                                    <td>
+                                        <?= empty($status) ? 'Belum diupdate' : (isset($statusLabels[$status]) ? $statusLabels[$status] : esc($status)) ?>
+                                    </td>
+                                    <td><?= $last ? esc($last) : '-' ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map View modal omitted for brevity (unchanged) -->
+
+        <!-- Update modal (unchanged) -->
+
+        <!-- Create Modal -->
+        <div class="modal fade" id="createModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <form id="formCreateLab" method="post" action="<?= base_url('usaha/insertUsahaLab') ?>">
+                    <?= csrf_field() ?>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Tambah Usaha Baru</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <input type="hidden" name="iddesa" id="create_iddesa" value="<?= esc($selectedDesa ?? '') ?>">
+
+                            <!-- hanya 1 set hidden inputs untuk kdsls & nmsls -->
+                            <input type="hidden" id="create_kdsls" name="kdsls" value="">
+                            <input type="hidden" id="create_nmsls" name="nmsls" value="">
+
+                            <!-- Kaki lima fields -->
+                            <input type="hidden" name="kakilima_iddesa" id="kakilima_iddesa" value="">
+                            <input type="hidden" name="kakilima_flag" id="kakilima_flag_hidden" value="0">
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="kakilima_flag">
+                                <label class="form-check-label" for="kakilima_flag">Usaha kaki lima?</label>
+                            </div>
+
+                            <div id="kakilima_block" style="display:none; border:1px dashed #ddd; padding:12px; border-radius:6px; margin-bottom:12px;">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label for="kakilima_kecamatan" class="form-label">Kecamatan (rumah)</label>
+                                        <select id="kakilima_kecamatan" class="form-select">
+                                            <option value="">-- Pilih Kecamatan --</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="kakilima_desa" class="form-label">Desa (rumah)</label>
+                                        <select id="kakilima_desa" class="form-select">
+                                            <option value="">-- Pilih Desa --</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 mt-2">
+                                    <label for="kakilima_address" class="form-label">Alamat (rumah)</label>
+                                    <textarea id="kakilima_address" name="kakilima_address" class="form-control" rows="2" placeholder="Alamat Rumah"></textarea>
+                                    <small class="text-muted">Jika kosong, akan otomatis diisi nama desa saat desa dipilih.</small>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Nama Usaha</label>
+                                <input type="text" class="form-control" name="placeName" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Alamat</label>
+                                <textarea class="form-control" name="placeAddress" rows="2" required></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Geser Peta untuk memilih koordinat (klik / drag marker)</label>
+                                <div id="createMap" style="height:420px;border:1px solid #ddd;"></div>
+                                <small class="text-muted d-block mt-2">
+                                    Jika titik masuk ke salah satu polygon SLS (geojson), sistem akan mengisi otomatis <code>kdsls</code> & <code>nmsls</code>.
+                                </small>
+                            </div>
+
+                            <div class="mb-3 d-flex gap-2">
+                                <input type="text" id="create_lat" name="latitude" class="form-control" placeholder="Latitude" required readonly>
+                                <input type="text" id="create_lng" name="longitude" class="form-control" placeholder="Longitude" required readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <div id="kdslsInfo" class="small text-muted">
+                                    kdsls: <span id="kdslsValue">-</span>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                                    nmsls: <span id="nmslsValue">-</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" id="btnCreateSubmit" class="btn btn-success">Simpan</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <?php else: ?>
+        <div class="alert alert-info">Silakan pilih desa untuk menampilkan data establishment.</div>
+    <?php endif; ?>
+
+</div>
+
+<!-- Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php if (!empty($googleMapsKey)): ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?= esc($googleMapsKey) ?>&libraries=geometry"></script>
+<?php endif; ?>
+
+<script>
+(function () {
+    // DataTable init (jQuery & DataTables harus di-load di layout)
+    if (typeof jQuery !== 'undefined') {
+        $(document).ready(function () {
+            if ($('#labTable').length && !$.fn.dataTable.isDataTable('#labTable')) {
+                $('#labTable').DataTable({
+                    responsive: true,
+                    paging: true,
+                    ordering: true,
+                    searching: true,
+                    pageLength: 10,
+                    lengthMenu: [5,10,25,50,100],
+                    language: { url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json" }
+                });
+            }
+        });
+    }
+
+    // SweetAlert flashdata
+    document.addEventListener('DOMContentLoaded', function () {
+        <?php if (session()->getFlashdata('success')): ?>
+            Swal.fire({ icon: 'success', title: 'Berhasil', text: <?= json_encode(session()->getFlashdata('success')) ?> });
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('error')): ?>
+            Swal.fire({ icon: 'error', title: 'Gagal', text: <?= json_encode(session()->getFlashdata('error')) ?> });
+        <?php endif; ?>
+    });
+
+    // Create map (Google Maps) - init on modal shown
+    var createMap = null, createMarker = null;
+    var defaultCenter = { lat: 0.5074, lng: 101.4478 };
+    var selectedDesa = '<?= esc($selectedDesa ?? '') ?>';
+
+    var createModalEl = document.getElementById('createModal');
+    if (createModalEl) {
+        createModalEl.addEventListener('shown.bs.modal', function () {
+            var fallback = defaultCenter;
+            <?php if (!empty($usaha) && !empty($usaha[0])):
+                $first = $usaha[0];
+                $fLat = is_array($first) ? ($first['placeLatitude'] ?? null) : ($first->placeLatitude ?? null);
+                $fLng = is_array($first) ? ($first['placeLongitude'] ?? null) : ($first->placeLongitude ?? null);
+                if ($fLat && $fLng): ?>
+                    fallback = { lat: <?= (float)$fLat ?>, lng: <?= (float)$fLng ?> };
+            <?php endif; endif; ?>
+
+            setTimeout(function () {
+                initCreateMap(fallback);
+            }, 50);
+        });
+    }
+
+    function initCreateMap(center) {
+        center = center || defaultCenter;
+        var mapDiv = document.getElementById('createMap');
+        if (!mapDiv) return;
+
+        if (typeof google === 'undefined' || !google.maps) {
+            console.warn('Google Maps JS belum ter-load (periksa API key).');
+            return;
+        }
+
+        if (!createMap) {
+            createMap = new google.maps.Map(mapDiv, {
+                center: center,
+                zoom: 16,
+                streetViewControl: false,
+            });
+        } else {
+            createMap.setCenter(center);
+            google.maps.event.trigger(createMap, 'resize');
+        }
+
+        if (!createMarker) {
+            createMarker = new google.maps.Marker({
+                position: center,
+                map: createMap,
+                draggable: true
+            });
+
+            createMarker.addListener('dragend', function () {
+                var pos = createMarker.getPosition();
+                setCreateLatLng(pos.lat(), pos.lng());
+                checkGeojsonAndSetKdsls(pos.lat(), pos.lng());
+            });
+
+            createMap.addListener('click', function (e) {
+                var ll = e.latLng;
+                createMarker.setPosition(ll);
+                setCreateLatLng(ll.lat(), ll.lng());
+                checkGeojsonAndSetKdsls(ll.lat(), ll.lng());
+            });
+        } else {
+            createMarker.setPosition(center);
+        }
+
+        setCreateLatLng(center.lat, center.lng);
+        checkGeojsonAndSetKdsls(center.lat, center.lng);
+    }
+
+    function setCreateLatLng(lat, lng) {
+        var elLat = document.getElementById('create_lat');
+        var elLng = document.getElementById('create_lng');
+        if (elLat) elLat.value = lat;
+        if (elLng) elLng.value = lng;
+    }
+
+    function checkGeojsonAndSetKdsls(lat, lng) {
+        var iddesa = (document.getElementById('create_iddesa') && document.getElementById('create_iddesa').value) || selectedDesa;
+        var elKdslsVal = document.getElementById('kdslsValue');
+        var elNmslsVal = document.getElementById('nmslsValue');
+        var elKdslsHidden = document.getElementById('create_kdsls');
+        var elNmslsHidden = document.getElementById('create_nmsls');
+
+        if (!elKdslsVal || !elKdslsHidden || !elNmslsVal || !elNmslsHidden) return;
+        if (!iddesa) {
+            elKdslsVal.textContent = '-';
+            elNmslsVal.textContent = '-';
+            elKdslsHidden.value = '';
+            elNmslsHidden.value = '';
+            return;
+        }
+
+        elKdslsVal.textContent = 'Memeriksa...';
+        elNmslsVal.textContent = 'Memeriksa...';
+
+        var fd = new FormData();
+        fd.append('lat', lat);
+        fd.append('lng', lng);
+        fd.append('iddesa', iddesa);
+        fd.append('<?= csrf_token() ?>', '<?= csrf_hash() ?>');
+
+        fetch('<?= base_url('usaha/checkGeojson') ?>', {
+            method: 'POST',
+            body: fd,
+            credentials: 'same-origin'
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+            if (json && json.success) {
+                elKdslsVal.textContent = json.kdsls || '-';
+                elKdslsHidden.value = json.kdsls || '';
+
+                elNmslsVal.textContent = json.nmsls || '-';
+                elNmslsHidden.value = json.nmsls || '';
+            } else {
+                elKdslsVal.textContent = '-';
+                elNmslsVal.textContent = '-';
+                elKdslsHidden.value = '';
+                elNmslsHidden.value = '';
+            }
+        })
+        .catch(function (err) {
+            console.error('checkGeojson error', err);
+            elKdslsVal.textContent = '-';
+            elNmslsVal.textContent = '-';
+            elKdslsHidden.value = '';
+            elNmslsHidden.value = '';
+        });
+    }
+
+    // Create submit: validation + final geojson check + confirmation
+    var btnCreate = document.getElementById('btnCreateSubmit');
+    if (btnCreate) {
+        btnCreate.addEventListener('click', function () {
+            var form = document.getElementById('formCreateLab');
+            if (!form) return;
+            var name = (form.querySelector('input[name="placeName"]') && form.querySelector('input[name="placeName"]').value || '').trim();
+            var address = (form.querySelector('textarea[name="placeAddress"]') && form.querySelector('textarea[name="placeAddress"]').value || '').trim();
+            var lat = parseFloat(document.getElementById('create_lat').value || '');
+            var lng = parseFloat(document.getElementById('create_lng').value || '');
+            var iddesa = document.getElementById('create_iddesa').value || selectedDesa;
+
+            var missing = [];
+            if (!name) missing.push('Nama usaha');
+            if (!address) missing.push('Alamat');
+            if (!iddesa) missing.push('Desa');
+            if (isNaN(lat) || isNaN(lng)) missing.push('Koordinat');
+
+            if (missing.length) {
+                Swal.fire({ icon: 'warning', title: 'Validasi Gagal', html: 'Field wajib diisi: <b>' + missing.join(', ') + '</b>.' });
+                return;
+            }
+
+            // final check via server to ensure kdsls/nmsls accurate
+            var fd = new FormData();
+            fd.append('lat', lat);
+            fd.append('lng', lng);
+            fd.append('iddesa', iddesa);
+            fd.append('<?= csrf_token() ?>', '<?= csrf_hash() ?>');
+
+            fetch('<?= base_url('usaha/checkGeojson') ?>', { method: 'POST', body: fd, credentials: 'same-origin' })
+                .then(r => r.json())
+                .then(function (json) {
+                    if (json && json.success) {
+                        document.getElementById('create_kdsls').value = json.kdsls || '';
+                        document.getElementById('kdslsValue').textContent = json.kdsls || '-';
+                        document.getElementById('create_nmsls').value = json.nmsls || '';
+                        document.getElementById('nmslsValue').textContent = json.nmsls || '-';
+                    } else {
+                        // tetap lanjut (bisa kosong)
+                        document.getElementById('create_kdsls').value = '';
+                        document.getElementById('create_nmsls').value = '';
+                    }
+
+                    // set kakilima hidden values
+                    var chk = document.getElementById('kakilima_flag');
+                    var hidFlag = document.getElementById('kakilima_flag_hidden');
+                    var hidIddesa = document.getElementById('kakilima_iddesa');
+                    if (hidFlag) hidFlag.value = chk && chk.checked ? '1' : '0';
+                    if (hidIddesa && !hidIddesa.value && document.getElementById('kakilima_desa') && document.getElementById('kakilima_desa').value) {
+                        hidIddesa.value = document.getElementById('kakilima_desa').value;
+                    }
+
+                    // konfirmasi akhir sebelum submit
+                    Swal.fire({
+                        title: 'Yakin akan menyimpan?',
+                        text: "Pastikan semua data sudah benar.",
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, simpan',
+                        cancelButtonText: 'Batal',
+                        reverseButtons: true
+                    }).then(function (res) {
+                        if (res.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                }).catch(function (err) {
+                    console.error('checkGeojson failed', err);
+                    // masih tampilkan konfirmasi walau check gagal
+                    Swal.fire({
+                        title: 'Yakin akan menyimpan?',
+                        text: "Check geojson gagal — tetap lanjut menyimpan?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, simpan',
+                        cancelButtonText: 'Batal',
+                        reverseButtons: true
+                    }).then(function (res) {
+                        if (res.isConfirmed) form.submit();
+                    });
+                });
+        });
+    }
+
+    // -------------------
+    // KAKI LIMA UI LOGIC (sama seperti sebelumnya)
+    // -------------------
+    (function () {
+        var chkKaki = document.getElementById('kakilima_flag');
+        var blockKaki = document.getElementById('kakilima_block');
+        var selKecKaki = document.getElementById('kakilima_kecamatan');
+        var selDesKaki = document.getElementById('kakilima_desa');
+        var hiddenKakiIddesa = document.getElementById('kakilima_iddesa');
+        var hiddenKakiFlag = document.getElementById('kakilima_flag_hidden');
+        var txtKakiAddress = document.getElementById('kakilima_address');
+        var createIdDesa = document.getElementById('create_iddesa');
+
+        function getIdKabFromIdDesa(iddesa) {
+            if (!iddesa || iddesa.length < 4) return '';
+            return iddesa.substring(0,4);
+        }
+
+        if (chkKaki) {
+            chkKaki.addEventListener('change', function () {
+                if (this.checked) {
+                    if (blockKaki) blockKaki.style.display = 'block';
+                    if (hiddenKakiFlag) hiddenKakiFlag.value = '1';
+                    var iddesa = (createIdDesa && createIdDesa.value) || '';
+                    var idkab = getIdKabFromIdDesa(iddesa);
+                    if (idkab) loadKecamatan(idkab);
+                } else {
+                    if (blockKaki) blockKaki.style.display = 'none';
+                    if (hiddenKakiFlag) hiddenKakiFlag.value = '0';
+                    if (selKecKaki) selKecKaki.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                    if (selDesKaki) selDesKaki.innerHTML = '<option value="">-- Pilih Desa --</option>';
+                    if (hiddenKakiIddesa) hiddenKakiIddesa.value = '';
+                    if (txtKakiAddress) txtKakiAddress.value = '';
+                }
+            });
+        }
+
+        $('#create_iddesa').on('change', function () {
+            if (chkKaki && chkKaki.checked) {
+                var idkab = getIdKabFromIdDesa(this.value || '');
+                if (idkab) loadKecamatan(idkab);
+            }
+        });
+
+        function loadKecamatan(idkab) {
+            if (!selKecKaki) return;
+            selKecKaki.innerHTML = '<option value="">Memuat...</option>';
+            fetch('<?= base_url('usaha/getKecamatan/') ?>' + encodeURIComponent(idkab))
+                .then(r => r.json())
+                .then(data => {
+                    selKecKaki.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                    data.forEach(function (k) {
+                        var opt = document.createElement('option');
+                        opt.value = k.idkec;
+                        opt.textContent = k.nmkec;
+                        selKecKaki.appendChild(opt);
+                    });
+                }).catch(err => {
+                    console.error('loadKecamatan error', err);
+                    selKecKaki.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+                });
+        }
+
+        if (selKecKaki) {
+            selKecKaki.addEventListener('change', function () {
+                var idkec = this.value;
+                if (!selDesKaki) return;
+                selDesKaki.innerHTML = '<option value="">Memuat...</option>';
+                if (hiddenKakiIddesa) hiddenKakiIddesa.value = '';
+                if (txtKakiAddress) txtKakiAddress.value = '';
+                if (!idkec) {
+                    selDesKaki.innerHTML = '<option value="">-- Pilih Desa --</option>';
+                    return;
+                }
+                fetch('<?= base_url('usaha/getDesa/') ?>' + encodeURIComponent(idkec))
+                    .then(r => r.json())
+                    .then(data => {
+                        selDesKaki.innerHTML = '<option value="">-- Pilih Desa --</option>';
+                        data.forEach(function (d) {
+                            var opt = document.createElement('option');
+                            opt.value = d.iddesa;
+                            opt.textContent = d.nmdesa;
+                            selDesKaki.appendChild(opt);
+                        });
+                    }).catch(err => {
+                        console.error('loadDesa error', err);
+                        selDesKaki.innerHTML = '<option value="">-- Pilih Desa --</option>';
+                    });
+            });
+        }
+
+        if (selDesKaki) {
+            selDesKaki.addEventListener('change', function () {
+                var iddesa = this.value || '';
+                if (hiddenKakiIddesa) hiddenKakiIddesa.value = iddesa;
+                if (txtKakiAddress && !txtKakiAddress.value.trim()) {
+                    var sel = this.selectedOptions[0];
+                    if (sel) txtKakiAddress.value = sel.textContent || '';
+                }
+            });
+        }
+
+        if (btnCreate) {
+            btnCreate.addEventListener('click', function () {
+                if (hiddenKakiFlag) hiddenKakiFlag.value = chkKaki && chkKaki.checked ? '1' : '0';
+                if (hiddenKakiIddesa && !hiddenKakiIddesa.value && selDesKaki && selDesKaki.value) hiddenKakiIddesa.value = selDesKaki.value;
+            });
+        }
+    })();
+
+})();
+</script>
+
+<style>
+    div.dataTables_length { float:left; margin-right:20px; }
+    div.dt-buttons { float:left; margin-bottom:10px; }
+    div.dataTables_filter { float:right; }
+    @media screen and (max-width:768px) {
+        div.dataTables_length, div.dt-buttons, div.dataTables_filter { float:none; text-align:center; margin-bottom:10px; }
+    }
+</style>
+
+<?= $this->endSection() ?>

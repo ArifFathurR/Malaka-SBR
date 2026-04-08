@@ -1,0 +1,206 @@
+[30-Dec-2024 09:39:27 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/bps1400/public_html/mentari/system/Common.php on line 98
+[30-Dec-2024 09:39:32 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '|' or variable (T_VARIABLE) in /home/bps1400/public_html/mentari/system/Common.php on line 98
+[08-Jan-2025 02:48:18 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\Survey::proses_input_cc() in /home/riauwebb/public_html/mentari/app/Controllers/Survey.php on line 189
+[26-May-2025 18:10:52 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/mentari/system/Database/MySQLi/Result.php on line 140
+[26-May-2025 19:22:23 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/mentari/system/Database/MySQLi/Result.php on line 140
+[26-May-2025 19:22:31 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/mentari/system/Database/MySQLi/Result.php on line 140
+[26-May-2025 20:29:13 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/mentari/system/Database/MySQLi/Result.php on line 140
+[04-Jun-2025 10:08:18 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[04-Jun-2025 10:08:39 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[11-Jun-2025 09:35:56 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[11-Jun-2025 09:36:01 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[11-Jun-2025 09:36:07 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[01-Jul-2025 11:41:29 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/spektral/public_html/malaka/app/Controllers/SiriController.php on line 614
+[03-Jul-2025 03:03:00 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\SiriController::getSLS() in /home/riauwebb/public_html/malaka/app/Controllers/SiriController.php on line 300
+[03-Jul-2025 11:29:15 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[04-Jul-2025 09:00:09 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 49466440 bytes) in /home/riauwebb/public_html/malaka/system/View/View.php on line 439
+[04-Jul-2025 10:33:19 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 6307840 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 160
+[04-Jul-2025 10:34:05 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 6307840 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 160
+[04-Jul-2025 10:34:28 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 6307840 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 160
+[04-Jul-2025 10:41:08 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 6307840 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 160
+[04-Jul-2025 13:36:19 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/spektral/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[04-Jul-2025 13:37:09 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/spektral/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[04-Jul-2025 13:58:08 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/spektral/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[04-Jul-2025 13:58:10 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 46341704 bytes) in /home/spektral/public_html/malaka/system/View/View.php on line 439
+[04-Jul-2025 13:58:33 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/spektral/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[04-Jul-2025 13:58:59 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 6307840 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 160
+[04-Jul-2025 14:00:51 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 46341704 bytes) in /home/spektral/public_html/malaka/system/View/View.php on line 439
+[04-Jul-2025 14:08:22 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 31473664 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 197
+[04-Jul-2025 14:17:15 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 48250880 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 170
+[04-Jul-2025 14:19:04 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 31473664 bytes) in /home/spektral/public_html/malaka/app/Views/siripages/tabelusaha.php on line 197
+[17-Jul-2025 10:38:14 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 9175040 bytes) in /home/smam3787/public_html/malakabps/app/Controllers/SiriController.php on line 874
+[26-Jul-2025 21:35:47 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:35:51 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:12 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:12 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:13 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:15 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:15 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:17 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:19 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:42 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:43 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:36:57 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:03 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:08 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:09 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:19 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:21 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:22 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:26 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:44 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:37:59 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:03 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:30 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:33 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:36 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:39 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:39 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:41 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:42 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:44 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:52 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:56 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:38:56 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:03 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:09 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:09 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:23 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:28 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:29 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:35 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:35 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:37 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:44 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:45 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:48 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:39:55 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:40:32 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:40:34 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:40:44 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:40:44 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:40:45 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:40:45 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:07 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:07 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:13 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:16 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:18 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:20 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:21 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:22 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:34 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:39 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:41:46 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:19 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:19 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:21 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:22 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:22 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:29 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:42:33 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:05 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:05 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:13 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:23 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:30 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:35 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:36 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:39 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:45 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:46 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:43:46 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:08 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:11 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:17 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:21 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:30 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:30 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:44:31 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:12 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:12 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:13 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:15 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:18 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:20 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:21 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:23 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:25 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:27 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:30 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:31 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:33 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:47 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:49 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:52 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:55 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:47:55 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:48:07 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:48:08 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:48:19 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:22 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:23 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:23 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:23 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:24 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:26 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:27 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:30 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[26-Jul-2025 21:49:32 Asia/Jakarta] PHP Warning:  JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0
+[05-Aug-2025 14:59:15 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[25-Aug-2025 10:43:21 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[25-Aug-2025 10:43:42 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[25-Aug-2025 11:03:06 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[27-Aug-2025 11:33:07 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[27-Aug-2025 23:39:25 Asia/Jakarta] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/smam3787/public_html/malakabps/system/Cache/ResponseCache.php on line 158
+[27-Aug-2025 16:49:43 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/smam3787/public_html/malakabps/system/Autoloader/FileLocator.php on line 196
+[27-Aug-2025 16:52:16 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/smam3787/public_html/malakabps/system/Autoloader/FileLocator.php on line 196
+[27-Aug-2025 16:53:04 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/smam3787/public_html/malakabps/system/Session/Handlers/BaseHandler.php on line 24
+[27-Aug-2025 16:52:45 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/smam3787/public_html/malakabps/system/Autoloader/FileLocator.php on line 196
+[27-Aug-2025 16:53:45 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/smam3787/public_html/malakabps/system/Autoloader/FileLocator.php on line 135
+[28-Aug-2025 08:59:36 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[28-Aug-2025 15:27:36 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[28-Aug-2025 23:27:42 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[29-Aug-2025 02:04:17 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[29-Aug-2025 11:29:48 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[01-Sep-2025 15:59:11 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[01-Sep-2025 16:01:27 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[01-Sep-2025 16:01:28 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[02-Sep-2025 08:13:55 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[02-Sep-2025 08:29:25 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[02-Sep-2025 08:29:51 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[02-Sep-2025 08:36:09 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/smam3787/public_html/malakabps/system/Database/MySQLi/Result.php on line 140
+[01-Oct-2025 04:41:07 UTC] PHP Fatal error:  Cannot redeclare App\Libraries\SSOLibrary::$urlBase in /home/riauwebb/public_html/malaka/app/Libraries/SSOLibrary.php on line 13
+[02-Oct-2025 14:01:45 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:06:34 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:09:30 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:09:50 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:11:26 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:13:06 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:18:32 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 14:24:16 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[02-Oct-2025 16:09:05 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[03-Oct-2025 13:38:32 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[05-Oct-2025 00:03:19 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[05-Oct-2025 00:04:50 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[06-Oct-2025 11:03:48 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[15-Oct-2025 10:05:01 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[16-Oct-2025 04:39:24 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\SiriController::labDropdown() in /home/riauwebb/public_html/malaka/app/Controllers/SiriController.php on line 1229
+[16-Oct-2025 04:39:24 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\SiriController::labDropdown() in /home/riauwebb/public_html/malaka/app/Controllers/SiriController.php on line 1229
+[16-Oct-2025 04:39:25 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\SiriController::labDropdown() in /home/riauwebb/public_html/malaka/app/Controllers/SiriController.php on line 1229
+[16-Oct-2025 04:39:29 UTC] PHP Fatal error:  Cannot redeclare App\Controllers\SiriController::labDropdown() in /home/riauwebb/public_html/malaka/app/Controllers/SiriController.php on line 1229
+[18-Oct-2025 12:32:52 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[18-Oct-2025 13:52:39 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[25-Oct-2025 11:54:40 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[28-Oct-2025 16:09:13 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[29-Oct-2025 11:54:50 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[03-Dec-2025 09:27:25 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[03-Dec-2025 09:27:49 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[03-Dec-2025 09:29:19 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
+[31-Dec-2025 12:43:46 Asia/Jakarta] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/riauwebb/public_html/malaka/system/Database/MySQLi/Result.php on line 140
